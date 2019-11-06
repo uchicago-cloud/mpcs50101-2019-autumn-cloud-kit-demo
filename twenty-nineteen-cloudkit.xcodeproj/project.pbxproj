@@ -13,6 +13,8 @@
 		97E227E12371124A007C8C60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E227DF2371124A007C8C60 /* Main.storyboard */; };
 		97E227E32371124C007C8C60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97E227E22371124C007C8C60 /* Assets.xcassets */; };
 		97E227E62371124C007C8C60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E227E42371124C007C8C60 /* LaunchScreen.storyboard */; };
+		97E227F023711264007C8C60 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E227EF23711264007C8C60 /* CloudKit.framework */; };
+		97E227F2237112AE007C8C60 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E227F1237112AE007C8C60 /* CloudKitManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		97E227E22371124C007C8C60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97E227E52371124C007C8C60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97E227E72371124C007C8C60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97E227ED23711261007C8C60 /* twenty-nineteen-cloudkit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "twenty-nineteen-cloudkit.entitlements"; sourceTree = "<group>"; };
+		97E227EF23711264007C8C60 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		97E227F1237112AE007C8C60 /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		97E227F323721C8C007C8C60 /* NEXTWEEK.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NEXTWEEK.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97E227F023711264007C8C60 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,7 @@
 			children = (
 				97E227D82371124A007C8C60 /* twenty-nineteen-cloudkit */,
 				97E227D72371124A007C8C60 /* Products */,
+				97E227EE23711264007C8C60 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,8 +64,11 @@
 		97E227D82371124A007C8C60 /* twenty-nineteen-cloudkit */ = {
 			isa = PBXGroup;
 			children = (
+				97E227ED23711261007C8C60 /* twenty-nineteen-cloudkit.entitlements */,
 				97E227D92371124A007C8C60 /* AppDelegate.swift */,
+				97E227F323721C8C007C8C60 /* NEXTWEEK.md */,
 				97E227DB2371124A007C8C60 /* SceneDelegate.swift */,
+				97E227F1237112AE007C8C60 /* CloudKitManager.swift */,
 				97E227DD2371124A007C8C60 /* ViewController.swift */,
 				97E227DF2371124A007C8C60 /* Main.storyboard */,
 				97E227E22371124C007C8C60 /* Assets.xcassets */,
@@ -65,6 +76,14 @@
 				97E227E72371124C007C8C60 /* Info.plist */,
 			);
 			path = "twenty-nineteen-cloudkit";
+			sourceTree = "<group>";
+		};
+		97E227EE23711264007C8C60 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97E227EF23711264007C8C60 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +159,7 @@
 			files = (
 				97E227DE2371124A007C8C60 /* ViewController.swift in Sources */,
 				97E227DA2371124A007C8C60 /* AppDelegate.swift in Sources */,
+				97E227F2237112AE007C8C60 /* CloudKitManager.swift in Sources */,
 				97E227DC2371124A007C8C60 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "twenty-nineteen-cloudkit/twenty-nineteen-cloudkit.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 723KYE3F9E;
 				INFOPLIST_FILE = "twenty-nineteen-cloudkit/Info.plist";
@@ -302,6 +323,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "twenty-nineteen-cloudkit/twenty-nineteen-cloudkit.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 723KYE3F9E;
 				INFOPLIST_FILE = "twenty-nineteen-cloudkit/Info.plist";
