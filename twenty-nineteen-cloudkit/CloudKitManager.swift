@@ -241,17 +241,17 @@ open class CloudKitManager {
   func registerJokeOfTheDaySubscriptions() {
     // Unique identifier for the subscription
     let uuid: UUID = UUID()
-    let identifier = "\(uuid)-joke-of-the-day-any-key"
+    let identifier = "\(uuid)-joke-of-the-day"
     
     // Create the notification that will be delivered
     let notificationInfo = CKSubscription.NotificationInfo()
     notificationInfo.alertBody = "The Joke of the Day is here! 😂"
     notificationInfo.shouldBadge = true
     notificationInfo.shouldSendContentAvailable = true
-    notificationInfo.desiredKeys = ["question"]
+    notificationInfo.desiredKeys = ["joke"]
     
     // Create the subscription object
-    let subscription = CKQuerySubscription(recordType: "joke",
+    let subscription = CKQuerySubscription(recordType: "joke_of_the_day",
                                            predicate: NSPredicate(value: true),
                                            subscriptionID: identifier,
                                            options: [
@@ -270,79 +270,33 @@ open class CloudKitManager {
   }
   
   
+
+  func registerSilentAlertSubscription() {
+    let uuid: UUID = UUID()
+    let identifier = "\(uuid)-alert"
+    
+    
+    // Create the notification that will be delivered
+    let notificationInfo = CKSubscription.NotificationInfo()
+    notificationInfo.shouldSendContentAvailable = true
+    notificationInfo.desiredKeys = ["message"]
+    
+    // Create the subscription
+    let subscription = CKQuerySubscription(recordType: "alert",
+                                           predicate: NSPredicate(value: true),
+                                           subscriptionID: identifier,
+                                           options: [CKQuerySubscription.Options.firesOnRecordCreation])
+    
+    subscription.notificationInfo = notificationInfo
+    CKContainer.default().publicCloudDatabase.save(subscription,
+                                                   completionHandler: ({returnRecord, error in
+                                                    if let err = error {
+                                                      print("ALERT: subscription failed \(err.localizedDescription)")
+                                                    } else {
+                                                      print("ALERT: subscription set up")
+                                                    }
+                                                   }))
+  }
   
-  //  func registerSubscriptionsWithIdentifier(_ identifier: String) {
-  //
-  //    let uuid: UUID = UIDevice().identifierForVendor!
-  //    let identifier = "\(uuid)-creation"
-  //
-  //    // Create the notification that will be delivered
-  //    let notificationInfo = CKNotificationInfo()
-  //    notificationInfo.alertBody = "A new joke was added."
-  //    notificationInfo.shouldBadge = true
-  //    notificationInfo.shouldSendContentAvailable = true
-  //
-  //    let subscription = CKQuerySubscription(recordType: "joke",
-  //                                           predicate: NSPredicate(value: true),
-  //                                           subscriptionID: identifier,
-  //                                           options: [.firesOnRecordCreation])
-  //    subscription.notificationInfo = notificationInfo
-  //    CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: ({returnRecord, error in
-  //      if let err = error {
-  //        print("subscription failed \(err.localizedDescription)")
-  //      } else {
-  //        print("subscription set up")
-  //      }
-  //    }))
-  //  }
-  
-  //  func registerSilentSubscriptionsWithIdentifier(_ identifier: String) {
-  //
-  //    let uuid: UUID = UIDevice().identifierForVendor!
-  //    let identifier = "\(uuid)-delete"
-  //
-  //    // Create the notification that will be delivered
-  //    let notificationInfo = CKNotificationInfo()
-  //    notificationInfo.shouldSendContentAvailable = true
-  //
-  //    let subscription = CKQuerySubscription(recordType: "joke",
-  //                                           predicate: NSPredicate(value: true),
-  //                                           subscriptionID: identifier,
-  //                                           options: [.firesOnRecordCreation])
-  //    subscription.notificationInfo = notificationInfo
-  //    CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: ({returnRecord, error in
-  //      if let err = error {
-  //        print("subscription failed \(err.localizedDescription)")
-  //      } else {
-  //        print("subscription set up")
-  //      }
-  //    }))
-  //  }
-  //
-  //  func registerSilentAlertSubscription() {
-  //    let uuid: UUID = UIDevice().identifierForVendor!
-  //    let identifier = "\(uuid)-alert"
-  //
-  //    // Create the notification that will be delivered
-  //    let notificationInfo = CKNotificationInfo()
-  //    notificationInfo.shouldSendContentAvailable = true
-  //    notificationInfo.desiredKeys = ["message"]
-  //
-  //    // Create the subscription
-  //    let subscription = CKQuerySubscription(recordType: "Alert",
-  //                                           predicate: NSPredicate(value: true),
-  //                                           subscriptionID: identifier,
-  //                                           options: [.firesOnRecordCreation])
-  //    subscription.notificationInfo = notificationInfo
-  //    CKContainer.default().publicCloudDatabase.save(subscription,
-  //                                                   completionHandler: ({returnRecord, error in
-  //                                                    if let err = error {
-  //                                                      print("ALERT: subscription failed \(err.localizedDescription)")
-  //                                                    } else {
-  //                                                      print("ALERT: subscription set up")
-  //                                                    }
-  //                                                   }))
-  //  }
-  //
   
 }

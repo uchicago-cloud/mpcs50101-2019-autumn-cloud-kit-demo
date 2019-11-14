@@ -48,3 +48,59 @@
      completionHandler(.noData)
    }
  }
+
+
+
+
+
+//  func registerSubscriptionsWithIdentifier(_ identifier: String) {
+//
+//    let uuid: UUID = UIDevice().identifierForVendor!
+//    let identifier = "\(uuid)-creation"
+//
+//    // Create the notification that will be delivered
+//    let notificationInfo = CKNotificationInfo()
+//    notificationInfo.alertBody = "A new joke was added."
+//    notificationInfo.shouldBadge = true
+//    notificationInfo.shouldSendContentAvailable = true
+//
+//    let subscription = CKQuerySubscription(recordType: "joke",
+//                                           predicate: NSPredicate(value: true),
+//                                           subscriptionID: identifier,
+//                                           options: [.firesOnRecordCreation])
+//    subscription.notificationInfo = notificationInfo
+//    CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: ({returnRecord, error in
+//      if let err = error {
+//        print("subscription failed \(err.localizedDescription)")
+//      } else {
+//        print("subscription set up")
+//      }
+//    }))
+//  }
+
+
+
+
+//  func registerSilentSubscriptionsWithIdentifier(_ identifier: String) {
+//
+//    let uuid: UUID = UIDevice().identifierForVendor!
+//    let identifier = "\(uuid)-delete"
+//
+//    // Create the notification that will be delivered
+//    let notificationInfo = CKNotificationInfo()
+//    notificationInfo.shouldSendContentAvailable = true
+//
+//    let subscription = CKQuerySubscription(recordType: "joke",
+//                                           predicate: NSPredicate(value: true),
+//                                           subscriptionID: identifier,
+//                                           options: [.firesOnRecordCreation])
+//    subscription.notificationInfo = notificationInfo
+//    CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: ({returnRecord, error in
+//      if let err = error {
+//        print("subscription failed \(err.localizedDescription)")
+//      } else {
+//        print("subscription set up")
+//      }
+//    }))
+//  }
+//

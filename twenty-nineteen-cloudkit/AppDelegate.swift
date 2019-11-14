@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
     // Register a subscription for this device
-    CloudKitManager.sharedInstance.registerJokeOfTheDaySubscriptions()
+    //CloudKitManager.sharedInstance.registerJokeOfTheDaySubscriptions()
+    CloudKitManager.sharedInstance.registerSilentAlertSubscription()
     
     // Request authorization for notifications
     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
@@ -43,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     return true
   }
-
+  
   
   //
   // MARK: - Notifications
@@ -67,17 +68,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // Do Something with the content available data
     let contentAvailable = aps["content-available"] as! Int
     if contentAvailable == 1 {
-      //print("APS: \(aps)")
-      //let cloudKitInfo = userInfo["ck"] as! [String: AnyObject]
-      //let recordId = cloudKitInfo["qry"]?["rid"] as! String
-      //let field = cloudKitInfo["qry"]?["af"] as! [String: AnyObject]
-      //let message = field["message"] as! String
-      completionHandler(.newData)
+      print("APS: \(aps)")
+      let cloudKitInfo = userInfo["ck"] as! [String: AnyObject]
+      let recordId = cloudKitInfo["qry"]?["rid"] as! String
+      let field = cloudKitInfo["qry"]?["af"] as! [String: AnyObject]
 
+      // A message indicates that we have a received a silent notification
+      if let message = field["message"] as? String {
+        local_notification_from_silent(message: message, recordId: recordId)
+      }
+      completionHandler(.newData)
+      
     } else {
       completionHandler(.noData)
     }
   }
+  
+  
+  ///
+  ///
+  ///
+  func local_notification_from_silent(message: String, recordId: String) {
+    print("Creating local notification")
+
+    // Create notification content
+    let content = UNMutableNotificationContent()
+    content.title = "😂 Joke of the Day"
+    content.subtitle = "Urgent Message"
+    content.body = message
+    content.sound = UNNotificationSound.default
+    
+    // Set up trigger
+    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1,repeats: false)
+    
+    // Create the notification request
+    let center = UNUserNotificationCenter.current()
+    let identifier = recordId
+    let request = UNNotificationRequest(identifier: identifier,
+                                        content: content, trigger: trigger)
+    center.add(request, withCompletionHandler: { (error) in
+      if let error = error {
+        print("Something went wrong: \(error)")
+      }
+    })
+  }
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   // MARK: UISceneSession Lifecycle

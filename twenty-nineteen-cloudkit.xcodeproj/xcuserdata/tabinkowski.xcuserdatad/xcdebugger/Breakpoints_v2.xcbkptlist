@@ -3,4 +3,118 @@
    uuid = "910318F3-47C1-4F7B-96CA-BC218A1C2280"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE490313-FF12-4B06-88DA-C34A1645A7DD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "twenty-nineteen-cloudkit/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "application(_:didReceiveRemoteNotification:fetchCompletionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FBB509D4-06BE-44BD-95A7-8170BDA80261"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "twenty-nineteen-cloudkit/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "application(_:didReceiveRemoteNotification:fetchCompletionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8395D878-7F2E-4B95-811D-C1AD05FFB5B6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "twenty-nineteen-cloudkit/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "local_notification_from_silent(message:recordId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A7A0D2E9-1B44-4AFC-A552-D5DBDC38C5BA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "twenty-nineteen-cloudkit/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "local_notification_from_silent(message:recordId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E60C5E7-28C1-4383-A59C-442930F8BF15"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "twenty-nineteen-cloudkit/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "local_notification_from_silent(message:recordId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6E60C5E7-28C1-4383-A59C-442930F8BF15 - 8b1519d4e677eb1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "twenty_nineteen_cloudkit.AppDelegate.local_notification_from_silent(message: Swift.String, recordId: Swift.String) -&gt; ()"
+                  moduleName = "twenty-nineteen-cloudkit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tabinkowski/Google%20Drive/g-Teaching/uchicago.cloud/%E2%98%81%EF%B8%8Fmcps51033-2019-autumn/mpcs51033-2019-autumn-code/twenty-nineteen-cloudkit/twenty-nineteen-cloudkit/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "1036">
+               </Location>
+               <Location
+                  uuid = "6E60C5E7-28C1-4383-A59C-442930F8BF15 - b5e2b8af01580ee6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in twenty_nineteen_cloudkit.AppDelegate.local_notification_from_silent(message: Swift.String, recordId: Swift.String) -&gt; ()"
+                  moduleName = "twenty-nineteen-cloudkit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tabinkowski/Google%20Drive/g-Teaching/uchicago.cloud/%E2%98%81%EF%B8%8Fmcps51033-2019-autumn/mpcs51033-2019-autumn-code/twenty-nineteen-cloudkit/twenty-nineteen-cloudkit/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
